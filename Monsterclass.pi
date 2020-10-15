@@ -1,0 +1,41 @@
+import time
+import random
+import replit
+print("You have come across a hideous, disgusting, ogre, you seem to have been in his swamp for too long.")
+fight = input("1:fight 2:Run")
+if fight == "2":
+  chance = random.randint(1,100)
+  if chance >= 50:
+    print("You missed out on the fun")
+  if chance < 50:
+    print("You coward you were slaughtered with onions.")
+if fight == "1":
+  print("You have chosen to fight")
+  playerhealth = 56
+  enemyhealth = 63
+  playerdamage = random.randint(20,28)
+  enemydamage = random.randint(15,24)
+  x1 = True
+  while True:
+    time.sleep(2)
+    print("you attack your opponent!!!")
+    playerdamage = random.randint(20,28)
+    time.sleep(2)
+    enemyhealth -= playerdamage
+    print("your opponent is now at" ,enemyhealth)
+    if enemyhealth < 0:
+      print("YOU WIN!!!")
+      break
+    time.sleep(2)
+    print("Your opponent attacks")
+    enemydamage = random.randint(15,24)
+    playerhealth -= enemydamage
+    block = random.randint(1,100)
+    if block > 50:
+      playerhealth += enemydamage
+      print("you blocked his attack!!!")
+    time.sleep(2)
+    print("you are now at" ,playerhealth)
+    if playerhealth < 0:
+      print("YOU LOSE...")
+      break
